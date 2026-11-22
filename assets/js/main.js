@@ -26,7 +26,7 @@ document.querySelectorAll('.rv').forEach(el => io.observe(el));
 // Visor de fotos
 const lb = document.getElementById('lb');
 if (lb) {
-  const sel = '.gallery img, .entry-img';
+  const sel = '.gallery img, .entry-img, .mini img';
   const img = lb.querySelector('img'), cap = lb.querySelector('p'); let list = [], i = 0;
   const show = n => { i = (n + list.length) % list.length; img.src = list[i].src; img.alt = list[i].alt; cap.textContent = list[i].alt; };
   document.querySelectorAll(sel).forEach(f => f.addEventListener('click', () => { list = [...document.querySelectorAll(sel)]; show(list.indexOf(f)); lb.classList.add('open'); }));
